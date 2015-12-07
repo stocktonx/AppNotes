@@ -24,19 +24,19 @@ public:
 	{
 		m_dGain = g;
 	}
-	inline double getZ()					// get Delay
+	inline double getZ()				// get Delay
 	{
 		return m_dZ;
 	}
-	inline double getGain()					// get Gain
+	inline double getGain()				// get Gain
 	{
 		return m_dGain;
 	}
-	inline double doIntegrate(double &input)// Integrate
+	inline double doIntegrate(double &input)	// Integrate
 	{
-		double v = input*m_dGain;			// process node v
-		double output = v + m_dZ;			// process output
-		m_dZ = v + output;					// process z
+		double v = input*m_dGain;		// process node v
+		double output = v + m_dZ;		// process output
+		m_dZ = v + output;			// process z
 		return output;
 	}
 };
